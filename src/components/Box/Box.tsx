@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Box.module.scss"
 
-interface BoxProps {
+interface BoxProps extends React.Component {
   backgroundURL?: string
   backgroundColor?: string
   gridArea: string
