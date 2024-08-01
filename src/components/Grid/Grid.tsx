@@ -28,7 +28,7 @@ interface GridProps {
 const Grid = ({ gap, rows, columns, areas, children }: GridProps) => {
   return (
     <div className={styles.grid} style={{
-      gap: gap ?? "1rem",
+      gap: gap ?? "1.5rem",
       "--rows-1440": `repeat(${rows[1440]}, 1fr)`,
       "--rows-1024": `repeat(${rows[1024]}, 1fr)`,
       "--rows-512": `repeat(${rows[512]}, 1fr)`,
