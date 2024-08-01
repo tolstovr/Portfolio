@@ -20,3 +20,10 @@ a, a:visited, a:hover, a:active {
     color: inherit;
     text-decoration: none;
 }
+
+main {
+    max-width: min(1440px, calc(100vw - 4rem));
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+}
