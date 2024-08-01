@@ -11,7 +11,7 @@
 
 В терминале git пропишите команды:
 ```bash
-git clone git@github.com:tolstovr/portfolio-frontend.git frontend
+git clone git@github.com:tolstovr/portfolio.git frontend
 cd frontend
 npm install
 npm run dev
