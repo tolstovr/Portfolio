@@ -11,8 +11,9 @@ interface BoxProps {
 
 const Box = ({ backgroundURL, backgroundColor, gridArea, className, children }: BoxProps) => {
   return (
-    <div className={`${styles.box} ${className ?? ""}`} style={{
-      ...(backgroundURL ? {background: backgroundURL} : backgroundColor ? {background: backgroundColor} : {}),
+    <div className={`${styles.box} ${className ?? ""} ${backgroundURL && styles["bg-img"]}`} style={{
+      ...(backgroundURL && {backgroundImage: `url(${backgroundURL})`}),
+      ...(backgroundColor && {background: backgroundColor}),
       gridArea: gridArea }}>
       {children}
     </div>
