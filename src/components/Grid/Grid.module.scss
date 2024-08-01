@@ -1,0 +1,26 @@
+@use "@/utils/colors.scss" as *;
+
+.grid {
+    display: grid;
+    grid-template-areas: var(--areas-1440);
+    grid-template-rows: var(--rows-1440);
+    grid-template-columns: var(--columns-1440);
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        grid-template-areas: var(--areas-1024);
+        grid-template-rows: var(--rows-1024);
+        grid-template-columns: var(--columns-1024);
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .grid {
+        grid-template-areas: var(--areas-512);
+        grid-template-rows: var(--rows-512);
+        grid-template-columns: var(--columns-512);
+    }
+}
