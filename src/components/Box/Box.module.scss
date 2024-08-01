@@ -1,0 +1,13 @@
+@use "@/utils/colors.scss" as *;
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: color-mix(in srgb, $color-grey-900 50%, $color-black 50%);
+    backdrop-filter: brightness(50%);
+}
