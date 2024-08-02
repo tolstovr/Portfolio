@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Grid.module.scss"
 
-interface GridProps extends React.Component {
+interface GridProps {
   gap?: string
 
   rows: {
