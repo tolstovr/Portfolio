@@ -22,15 +22,15 @@ const Container = () => {
     <Grid gap="1rem" rows={{
         1440: "2",
         1024: "3",
-        512: "4",
+        768: "4",
     }} columns={{
         1440: "3",
         1024: "2",
-        512: "1",
+        768: "1",
     }} areas={{
         1440: ["area1 area1 area2", "area3 area4 area4"],
         1024: ["area1 area1", "area2 area3", "area4 area4"],
-        512: ["area1", "area2", "area3", "area4"],
+        768: ["area1", "area2", "area3", "area4"],
     }}>
       <Box gridArea="area1" backgroundColor="indigo">
         Aboba
