@@ -14,7 +14,7 @@
         grid-template-columns: var(--columns-1024);
     }
 
-    @media screen and (max-width: 512px) {
+    @media screen and (max-width: 768px) {
         grid-template-areas: var(--areas-512);
         grid-template-rows: var(--rows-512);
         grid-template-columns: var(--columns-512);
