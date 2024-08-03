@@ -14,7 +14,6 @@ interface ButtonProps {
 }
 
 const Button = ({ children, ...props }: ButtonProps) => {
-  console.log(styles)
   return (
     <button className={`${styles.button} ${props.variant ? styles[props.variant] : styles.fill} ${props.size ? styles[props.size] : styles.medium} ${props.fullwidth && styles.fullwidth } ${props.round && styles.round} ${props.color ? styles[props.color] : styles.default}`} disabled={props.disabled} onClick={props.onClick}>
         {props.icon && <span className={styles.icon}>{props.icon}</span>}
