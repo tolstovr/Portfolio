@@ -1,0 +1,321 @@
+@use "@/utils/colors.scss" as *;
+
+.button {
+    &.primary {
+        $bg-color: $color-blue-500 !important;
+        $fg-color: $color-white !important;
+    
+        $bg-hov-color: $color-blue-700 !important;
+        $fg-hov-color: $color-white !important;
+    
+        $bg-act-color: $color-blue-600 !important;
+        $fg-act-color: $color-white !important;
+    }
+    
+    &.secondary {
+        $bg-color: $color-yellow-500 !important;
+        $fg-color: $color-black !important;
+    
+        $bg-hov-color: $color-yellow-600 !important;
+        $fg-hov-color: $color-black !important;
+    
+        $bg-act-color: $color-yellow-700 !important;
+        $fg-act-color: $color-black !important;
+    }
+    
+    &.error {
+        $bg-color: $color-red-500 !important;
+        $fg-color: $color-white !important;
+    
+        $bg-hov-color: $color-red-600 !important;
+        $fg-hov-color: $color-white !important;
+    
+        $bg-act-color: $color-red-700 !important;
+        $fg-act-color: $color-white !important;
+    }
+    
+    &.success {
+        $bg-color: $color-green-500 !important;
+        $fg-color: $color-white !important;
+    
+        $bg-hov-color: $color-green-700 !important;
+        $fg-hov-color: $color-white !important;
+    
+        $bg-act-color: $color-green-600 !important;
+        $fg-act-color: $color-white !important;
+    }
+    
+    &.warning {
+        $bg-color: $color-amber-500 !important;
+        $fg-color: $color-white !important;
+    
+        $bg-hov-color: $color-amber-700 !important;
+        $fg-hov-color: $color-white !important;
+    
+        $bg-act-color: $color-amber-600 !important;
+        $fg-act-color: $color-white !important;
+    }
+    
+    &.info {
+        $bg-color: $color-cyan-500 !important;
+        $fg-color: $color-white !important;
+    
+        $bg-hov-color: $color-cyan-600 !important;
+        $fg-hov-color: $color-white !important;
+    
+        $bg-act-color: $color-cyan-700 !important;
+        $fg-act-color: $color-white !important;
+    }
+    
+
+    transition: all .125s ease;
+    will-change: transform;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    border: none;
+
+    cursor: pointer;
+
+    &:active {
+        scale: 0.95
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 50%;
+        scale: 1 !important;
+    }
+
+    &:focus {
+        outline: inherit;
+    }
+
+    &.fill {
+        &.default {
+            background-color: $color-grey-900;
+            color: $color-white;
+
+            &:hover:not(:disabled) {
+                background-color: color-mix(in srgb, $color-grey-800 25%, $color-grey-900 75%);
+            }
+
+            &:active:not(:disabled) {
+                background-color: color-mix(in srgb, $color-grey-800 50%, $color-grey-900 50%);
+            }
+        }
+
+        &.primary {
+            background-color: $color-blue-800;
+            color: $color-white;
+        
+            &:hover:not(:disabled) {
+                background-color: color-mix(in srgb, $color-blue-800 50%, $color-blue-900 50%);
+            }
+        
+            &:active:not(:disabled) {
+                background-color: $color-blue-900;
+            }
+        }
+        
+        &.secondary {
+            background-color: $color-blue-grey-700;
+            color: $color-white;
+        
+            &:hover:not(:disabled) {
+                background-color: color-mix(in srgb, $color-blue-grey-700 50%, $color-blue-grey-800 50%);
+            }
+        
+            &:active:not(:disabled) {
+                background-color: $color-blue-grey-800;
+            }
+        }
+        
+        &.error {
+            background-color: $color-red-800;
+            color: $color-white;
+        
+            &:hover:not(:disabled) {
+                background-color: $color-red-900;
+            }
+        
+            &:active:not(:disabled) {
+                background-color: color-mix(in srgb, $color-red-900 90%, $color-black 10%);
+            }
+        }
+        
+        &.success {
+            background-color: $color-green-800;
+            color: $color-white;
+        
+            &:hover:not(:disabled) {
+                background-color: color-mix(in srgb, $color-green-900 50%, $color-green-800 50%);
+            }
+        
+            &:active:not(:disabled) {
+                background-color: color-mix(in srgb, $color-green-900 75%, $color-green-800 25%);
+            }
+        }
+        
+        &.warning {
+            background-color: $color-yellow-800;
+            color: $color-black;
+        
+            &:hover:not(:disabled) {
+                background-color: color-mix(in srgb, $color-yellow-900 50%, $color-yellow-800 50%);
+            }
+        
+            &:active:not(:disabled) {
+                background-color: $color-yellow-900;
+            }
+        }
+    }
+
+    &.outline {
+        background-color: transparent;
+        outline: 1px solid transparent;
+
+        &.default {
+            color: $color-grey-900;
+            outline-color: $color-grey-900;
+
+            &:hover:not(:disabled) {
+                color: color-mix(in srgb, $color-grey-800 25%, $color-grey-900 75%);
+                outline-color: color-mix(in srgb, $color-grey-800 25%, $color-grey-900 75%);
+                background-color: color-mix(in srgb, $color-grey-900 10%, transparent 90%);
+            }
+
+            &:active:not(:disabled) {
+                color: color-mix(in srgb, $color-grey-800 50%, $color-grey-900 50%);
+                outline-color: color-mix(in srgb, $color-grey-800 50%, $color-grey-900 50%);
+            }
+        }
+
+        &.primary {
+            color: $color-blue-800;
+            outline-color: $color-blue-800;
+        
+            &:hover:not(:disabled) {
+                outline-color: color-mix(in srgb, $color-blue-800 50%, $color-blue-900 50%);
+                color: color-mix(in srgb, $color-blue-800 50%, $color-blue-900 50%);
+                background-color: color-mix(in srgb, $color-blue-900 10%, transparent 90%);
+            }
+        
+            &:active:not(:disabled) {
+                outline-color: $color-blue-900;
+                color: $color-blue-900;
+            }
+        }
+        
+        &.secondary {
+            color: $color-blue-grey-700;
+            outline-color: $color-blue-grey-700;
+        
+            &:hover:not(:disabled) {
+                outline-color: color-mix(in srgb, $color-blue-grey-700 50%, $color-blue-grey-800 50%);
+                color: color-mix(in srgb, $color-blue-grey-700 50%, $color-blue-grey-800 50%);
+                background-color: color-mix(in srgb, $color-blue-grey-900 10%, transparent 90%);
+            }
+        
+            &:active:not(:disabled) {
+                outline-color: $color-blue-grey-800;
+                color: $color-blue-grey-800;
+            }
+        }
+        
+        &.error {
+            color: $color-red-800;
+            outline-color: $color-red-800;
+        
+            &:hover:not(:disabled) {
+                outline-color: $color-red-900;
+                color: $color-red-900;
+                background-color: color-mix(in srgb, $color-red-900 10%, transparent 90%);
+            }
+        
+            &:active:not(:disabled) {
+                outline-color: color-mix(in srgb, $color-red-900 90%, $color-black 10%);
+                color: color-mix(in srgb, $color-red-900 90%, $color-black 10%);
+            }
+        }
+        
+        &.success {
+            color: $color-green-800;
+            outline-color: $color-green-800;
+        
+            &:hover:not(:disabled) {
+                outline-color: color-mix(in srgb, $color-green-900 50%, $color-green-800 50%);
+                color: color-mix(in srgb, $color-green-900 50%, $color-green-800 50%);
+                background-color: color-mix(in srgb, $color-green-900 10%, transparent 90%);
+            }
+        
+            &:active:not(:disabled) {
+                outline-color: color-mix(in srgb, $color-green-900 75%, $color-green-800 25%);
+                color: color-mix(in srgb, $color-green-900 75%, $color-green-800 25%);
+            }
+        }
+        
+        &.warning {
+            color: $color-yellow-800;
+            outline-color: $color-yellow-800;
+        
+            &:hover:not(:disabled) {
+                outline-color: color-mix(in srgb, $color-yellow-900 50%, $color-yellow-800 50%);
+                color: color-mix(in srgb, $color-yellow-900 50%, $color-yellow-800 50%);
+                background-color: color-mix(in srgb, $color-yellow-900 10%, transparent 90%);
+            }
+        
+            &:active:not(:disabled) {
+                outline-color: $color-yellow-900;
+                color: $color-yellow-900;
+            }
+        }
+    }
+
+    &.round {
+        border-radius: 100vw !important;
+    }
+
+    &.fullwidth {
+        width: 100%
+    }
+
+    &.small {
+        font-size: small;
+        padding: .5rem 1rem;
+        border-radius: .25rem;
+
+        & .icon {
+            margin-right: .25rem;
+        }
+    }
+
+    &.medium {
+        font-size: medium;
+        padding: .75rem 1.25rem;
+        border-radius: .5rem;
+        
+        & .icon {
+            margin-right: .5rem;
+        }
+    }
+    
+    &.large {
+        font-size: larger;
+        padding: 1rem 1.5rem;
+        border-radius: .5rem;
+
+        & .icon {
+            margin-right: .75rem;
+        }
+    }
+
+    & .icon {
+        display: flex;
+        align-items: center;
+    }
+}
