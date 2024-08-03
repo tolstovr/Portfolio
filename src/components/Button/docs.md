@@ -1,17 +1,35 @@
 # Button
 
 ## Supported attributes
-variant?: "fill" | "outline"
-  size?: "small" | "medium" | "large"
-  color?: "default" | "primary" | "secondary" | "error" | "success" | "warning"
-  onClick?: () => void
-  icon?: React.ReactNode
-  disabled?: boolean
-  fullwidth?: boolean
-  round?: boolean
-  children?: React.ReactNode
 
-- `variant: "fill" | "outline"`. Determines either the button is filled or outlined
-- `color: "default" | "primary" | "secondary" | "error" | "success" | "warning"`. Sets the color theme of the button
-- `size: "small" | "medium" | "large"`. Sets the size of the button
-- `onClick: () => any`
+| **Attribute** | **Options** | **Default** |
+|---|---|---|
+| `variant` | `"fill" \| "outline"` | `fill` |
+| `color` | `"default" \| "primary" \| "secondary" \| "error" \| "success" \| "warning"` | `default` |
+| `size` | `"small" \| "medium" \| "large"` | `medium` |
+| `onClick` | `() => void` | `() => {}` |
+| `icon` | `React.ReactNode \| undefined` | `undefined` |
+| `disabled` | `boolean \| undefined` | `undefined` |
+| `fullwidth` | `boolean \| undefined` | `undefined` |
+| `round` | `boolean \| undefined` | `undefined` |
+| `children` | `React.ReactNode \| undefined` | `undefined` |
+
+## Example
+
+```tsx
+import Button from "@/components/Button/Button"
+import { CgHello } from "react-icons/cg"
+
+const Container = () => {
+  return (
+    <Button variant="outline"
+            color="primary"
+            size="large"
+            onClick={() => {alert("Aboba")}}
+            icon={<CgHello />}
+            disabled fullwidth round>
+      Aboba
+    </Button>
+  )
+}
+```
