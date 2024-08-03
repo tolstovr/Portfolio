@@ -15,8 +15,8 @@
     }
 
     @media screen and (max-width: 768px) {
-        grid-template-areas: var(--areas-512);
-        grid-template-rows: var(--rows-512);
-        grid-template-columns: var(--columns-512);
+        grid-template-areas: var(--areas-768);
+        grid-template-rows: var(--rows-768);
+        grid-template-columns: var(--columns-768);
     }
 }
