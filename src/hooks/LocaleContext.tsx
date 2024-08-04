@@ -6,9 +6,13 @@ interface LocaleContextType {
   toggleLang: () => void
 }
 
+interface LocaleProviderProps {
+  children: React.ReactNode
+}
+
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined)
 
-export const LocaleProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const LocaleProvider = ({ children }: LocaleProviderProps) => {
   const [lang, setLang] = useState<"en" | "ru">("ru")
 
   useEffect(() => {
