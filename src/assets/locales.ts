@@ -1,3 +1,5 @@
+import Cookies from "js-cookie"
+
 export const ru = {
   hero: {
     title: "Привет, я Роберт!",
@@ -27,3 +29,5 @@ export const en = {
     lichess: "Play chess with me"
   }
 }
+
+export const curLang = () => { Cookies.get("lang") === "en" ? en : ru }
