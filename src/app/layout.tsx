@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Hello, I'm Robert Tolstov and I'm builing minimalistic, modern and best-looking interfaces",
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="ru">
       <body className={rubik.className}>
@@ -18,3 +18,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   )
 }
+
+export default RootLayout
