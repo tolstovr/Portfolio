@@ -1,0 +1,66 @@
+@use "@/utils/colors.scss" as *;
+
+.stretch-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+        &:not(.nowrap) {
+            flex-direction: column;
+        }
+    }
+
+    &.nowrap {
+        flex-wrap: nowrap !important;
+    }
+}
+
+.info-box {
+    align-items: flex-start;
+
+    & h1 {
+        @media screen and (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    & p {
+        margin-top: 1.5rem;
+        margin-left: .5rem;
+        margin-right: 3rem;
+        color: $color-grey-400;
+
+        @media screen and (max-width: 768px) {
+            margin-left: 0;
+            margin-right: 0;
+            font-size: .9rem;
+        }
+    }
+}
+
+.socials-grid {
+    margin: 0 1rem;
+
+    & div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: xx-large;
+
+        & > * {
+            transition: .125s;
+
+            &:hover {
+                color: $color-grey-400;
+            }
+        }
+    }
+}
+
+/* Fixes small inaccurate behavoir of animation of settings box. Yeah, I'm psyco */
+.avatar-box {
+    z-index: 5
+}
