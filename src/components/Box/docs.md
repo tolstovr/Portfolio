@@ -7,6 +7,8 @@
 | `backgroundURL` | `string \| undefined` | `undefined` |
 | `backgroundColor` | `string \| undefined` | `undefined` |
 | `gridArea` | `string` | required |
+| `animation` | `"fade-up" \| "fade-left" \| "fade-right" \| "fade-down" \| "scale-in" \| "scale-out" \| undefined` | `undefined` |
+| `delay` | `number \| undefined` | `undefined` |
 | `className` | `string \| undefined` | `undefined` |
 | `children` | `React.ReactNode \| undefined` | `undefined` |
 
@@ -37,7 +39,7 @@ const Container = () => {
       </Box>
       <Box gridArea="area2" backgroundURL="/avatar.webp" />
       <Box gridArea="area3" className={styles.box} />
-      <Box gridArea="area4" />
+      <Box gridArea="area4" animation="fade-up" delay={0.25} />
     </Grid>
   )
 }
