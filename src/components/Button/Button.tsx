@@ -1,4 +1,5 @@
 import React from "react"
+import { useTheme } from "@/hooks/ThemeContext"
 import styles from "./Button.module.scss"
 
 interface ButtonProps {
@@ -14,8 +15,10 @@ interface ButtonProps {
 }
 
 const Button = ({ children, ...props }: ButtonProps) => {
+  const { theme, toggleTheme } = useTheme()
+
   return (
-    <button className={`${styles.button} ${props.variant ? styles[props.variant] : styles.fill} ${props.size ? styles[props.size] : styles.medium} ${props.fullwidth && styles.fullwidth } ${props.round && styles.round} ${props.color ? styles[props.color] : styles.default}`} disabled={props.disabled} onClick={props.onClick}>
+    <button className={`${styles.button} ${props.variant ? styles[props.variant] : styles.fill} ${props.size ? styles[props.size] : styles.medium} ${props.fullwidth && styles.fullwidth } ${props.round && styles.round} ${props.color ? styles[props.color] : styles.default} ${theme === "light" && styles.light}`} disabled={props.disabled} onClick={props.onClick}>
       {props.icon && <span className={styles.icon}>{props.icon}</span>}
       {children}
     </button>

@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { useTheme } from "@/hooks/ThemeContext"
+import { useLang } from "@/hooks/LocaleContext"
 import Grid from "@/components/Grid/Grid"
 import Box from "@/components/Box/Box"
 import Button from "@/components/Button/Button"
@@ -11,15 +13,15 @@ import styles from "./HeroSection.module.scss"
 import { ru, en } from "@/assets/locales"
 
 const HeroSection = () => {
-  const [theme, setTheme] = useState("dark")
-  const [lang, setLang] = useState("ru")
+  const { theme, toggleTheme } = useTheme()
+  const { lang, toggleLang } = useLang()
 
   const handleThemeChange = () => {
-    setTheme(theme === "dark"? "light" : "dark")
+    toggleTheme()
   }
 
   const handleLangChange = () => {
-    setLang(lang === "ru" ? "en" : "ru")
+    toggleLang()
   }
 
   const areas1440 = [
@@ -98,12 +100,12 @@ const HeroSection = () => {
 
       <Box gridArea="info" className={styles["info-box"]} animation="fade-right" delay={0.5}>
         <h1>&#128075;&nbsp;{ lang === "ru" ? ru.hero.title : en.hero.title }</h1>
-        <p>{ lang === "ru" ? ru.hero.info : en.hero.info }</p>
+        <p className={`${theme === "light" && styles.light}`}>{ lang === "ru" ? ru.hero.info : en.hero.info }</p>
       </Box>
 
       <Box gridArea="socials" animation="fade-right" delay={0.75}>
         <Grid gap="0" rows={{ 1440: 2, 1024: 2, 768: 2 }} columns={{ 1440: 3, 1024: 3, 768: 3 }}
-              areas={{1440: ["vk tg github", "gmail behance lichess"], 1024: ["vk tg github", "gmail behance lichess"], 768: ["vk tg github", "gmail behance lichess"]}} className={styles["socials-grid"]}>
+              areas={{1440: ["vk tg github", "gmail behance lichess"], 1024: ["vk tg github", "gmail behance lichess"], 768: ["vk tg github", "gmail behance lichess"]}} className={`${styles["socials-grid"]} ${theme === "light" && styles.light}`}>
           <div>
             <a href="https://vk.com/robertproducts" target="_blank" rel="noreferrer me" style={{gridArea: "vk"}} title={lang === "ru" ? ru.hero.vk : en.hero.vk}>
               <SiVk />

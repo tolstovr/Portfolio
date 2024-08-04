@@ -33,6 +33,10 @@
         margin-right: 3rem;
         color: $color-grey-400;
 
+        &.light {
+            color: $color-grey-700; 
+        }
+
         @media screen and (max-width: 768px) {
             margin-left: 0;
             margin-right: 0;
@@ -58,6 +62,10 @@
             }
         }
     }
+}
+
+.socials-grid.light div *:hover {
+    color: $color-grey-800;
 }
 
 /* Fixes small inaccurate behavoir of animation of settings box. Yeah, I'm psyco */

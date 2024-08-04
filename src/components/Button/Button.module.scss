@@ -108,6 +108,19 @@
             }
         }
 
+        &.default.light {
+            background-color: $color-grey-300;
+            color: $color-black;
+
+            &:hover:not(:disabled) {
+                background-color: color-mix(in srgb, $color-grey-400 25%, $color-grey-300 75%);
+            }
+
+            &:active:not(:disabled) {
+                background-color: color-mix(in srgb, $color-grey-400 50%, $color-grey-300 50%);
+            }
+        }
+
         &.primary {
             background-color: $color-blue-800;
             color: $color-white;
