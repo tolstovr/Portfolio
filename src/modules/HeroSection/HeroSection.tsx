@@ -16,14 +16,6 @@ const HeroSection = () => {
   const { theme, toggleTheme } = useTheme()
   const { lang, toggleLang } = useLang()
 
-  const handleThemeChange = () => {
-    toggleTheme()
-  }
-
-  const handleLangChange = () => {
-    toggleLang()
-  }
-
   const areas1440 = [
     "avatar avatar avatar avatar cv-tg cv-tg cv-tg cv-tg cv-tg settings settings settings settings",
     "avatar avatar avatar avatar info info info info info info socials socials socials",
@@ -88,10 +80,10 @@ const HeroSection = () => {
       </Box>
 
       <Box gridArea="settings" className={`${styles["stretch-box"]} ${styles.nowrap}`} animation="fade-up" delay={0.25}>
-        <Button onClick={handleThemeChange} size="large">
+        <Button onClick={toggleTheme} size="large">
           {theme === "dark" ? <MdBrightness2 /> : <MdBrightness7 />}
         </Button>
-        <Button onClick={handleLangChange} size="large" icon={<IoLanguage />}>
+        <Button onClick={toggleLang} size="large" icon={<IoLanguage />}>
           {lang === "ru" ? "Русский" : "English" }
         </Button>
       </Box>
