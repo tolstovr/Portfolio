@@ -30,4 +30,4 @@ export const en = {
   }
 }
 
-export const curLang = () => { Cookies.get("lang") === "en" ? en : ru }
+export const curLang = () => (Cookies.get("lang") === "en" ? en : ru)

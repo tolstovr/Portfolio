@@ -10,7 +10,7 @@ import { IoLanguage } from "react-icons/io5"
 import { FaTelegram, FaGithub, FaBehance, FaGooglePlusG } from "react-icons/fa6"
 import { SiVk, SiLichess  } from "react-icons/si"
 import styles from "./HeroSection.module.scss"
-import { ru, en } from "@/assets/locales"
+import { curLang } from "@/assets/locales"
 
 const HeroSection = () => {
   const { theme, toggleTheme } = useTheme()
@@ -77,12 +77,12 @@ const HeroSection = () => {
       <Box gridArea="cv-tg" className={styles["stretch-box"]} animation="fade-up">
         <a href="https://t.me/robertproducts" target="_blank" rel="noreferrer me">
           <Button fullwidth size="large" color="primary" icon={<FaTelegram />}>
-            {lang === "ru" ? ru.hero.tgchannel : en.hero.tgchannel }
+            {curLang().hero.tgchannel}
           </Button>
         </a>
         <a href="/avatar.webp" download>
           <Button fullwidth size="large" icon={<MdPictureAsPdf />}>
-            {lang === "ru" ? ru.hero.cv : en.hero.cv }
+            {curLang().hero.cv}
           </Button>
         </a>
       </Box>
@@ -99,40 +99,40 @@ const HeroSection = () => {
       <Box gridArea="avatar" backgroundURL="/avatar.webp" className={styles["avatar-box"]} animation="fade-left" />
 
       <Box gridArea="info" className={styles["info-box"]} animation="fade-right" delay={0.5}>
-        <h1>&#128075;&nbsp;{ lang === "ru" ? ru.hero.title : en.hero.title }</h1>
-        <p className={`${theme === "light" && styles.light}`}>{ lang === "ru" ? ru.hero.info : en.hero.info }</p>
+        <h1>&#128075;&nbsp;{curLang().hero.title}</h1>
+        <p className={`${theme === "light" && styles.light}`}>{curLang().hero.info}</p>
       </Box>
 
       <Box gridArea="socials" animation="fade-right" delay={0.75}>
         <Grid gap="0" rows={{ 1440: 2, 1024: 2, 768: 2 }} columns={{ 1440: 3, 1024: 3, 768: 3 }}
               areas={{1440: ["vk tg github", "gmail behance lichess"], 1024: ["vk tg github", "gmail behance lichess"], 768: ["vk tg github", "gmail behance lichess"]}} className={`${styles["socials-grid"]} ${theme === "light" && styles.light}`}>
           <div>
-            <a href="https://vk.com/robertproducts" target="_blank" rel="noreferrer me" style={{gridArea: "vk"}} title={lang === "ru" ? ru.hero.vk : en.hero.vk}>
+            <a href="https://vk.com/robertproducts" target="_blank" rel="noreferrer me" style={{gridArea: "vk"}} title={curLang().hero.vk}>
               <SiVk />
             </a>
           </div>
           <div>
-            <a href="https://t.me/im_robertproducts" target="_blank" rel="noreferrer me" style={{gridArea: "tg"} as React.CSSProperties} title={lang === "ru" ? ru.hero.tg : en.hero.tg}>
+            <a href="https://t.me/im_robertproducts" target="_blank" rel="noreferrer me" style={{gridArea: "tg"} as React.CSSProperties} title={curLang().hero.tg}>
               <FaTelegram />
             </a>
           </div>
           <div>
-            <a href="https://github.com/tolstovr" target="_blank" rel="noreferrer me" style={{gridArea: "github"}} title={lang === "ru" ? ru.hero.github : en.hero.github}>
+            <a href="https://github.com/tolstovr" target="_blank" rel="noreferrer me" style={{gridArea: "github"}} title={curLang().hero.github}>
               <FaGithub />
             </a>
           </div>
           <div>
-            <a href="mailto:tolstovrob@gmail.com" target="_blank" rel="noreferrer me" style={{gridArea: "gmail"}} title={lang === "ru" ? ru.hero.gmail : en.hero.gmail}>
+            <a href="mailto:tolstovrob@gmail.com" target="_blank" rel="noreferrer me" style={{gridArea: "gmail"}} title={curLang().hero.gmail}>
               <FaGooglePlusG />
             </a>
           </div>
           <div>
-            <a href="https://www.behance.net/roberttolstov" target="_blank" rel="noreferrer me" style={{gridArea: "behance"}} title={lang === "ru" ? ru.hero.behance : en.hero.behance}>
+            <a href="https://www.behance.net/roberttolstov" target="_blank" rel="noreferrer me" style={{gridArea: "behance"}} title={curLang().hero.behance}>
               <FaBehance />
             </a>
           </div>
           <div>
-            <a href="https://lichess.org/@/robertproductsru" target="_blank" rel="noreferrer me" style={{gridArea: "lichess"}} title={lang === "ru" ? ru.hero.lichess : en.hero.lichess}>
+            <a href="https://lichess.org/@/robertproductsru" target="_blank" rel="noreferrer me" style={{gridArea: "lichess"}} title={curLang().hero.lichess}>
               <SiLichess />
             </a>
           </div>
