@@ -11,7 +11,8 @@ export const ru = {
     github: "Github",
     gmail: "Написать в Gmail",
     behance: "Behance",
-    lichess: "Сыграть со мной в шахматы"
+    lichess: "Сыграть со мной в шахматы",
+    lang: "Русский"
   }
 }
 
@@ -26,7 +27,8 @@ export const en = {
     github: "Github",
     gmail: "Contact via Gmail",
     behance: "Behance",
-    lichess: "Play chess with me"
+    lichess: "Play chess with me",
+    lang: "English"
   }
 }
 
