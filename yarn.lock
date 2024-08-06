@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@fdorantesm/react-skill-icons@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@fdorantesm/react-skill-icons/-/react-skill-icons-1.0.5.tgz#7ad7aa7106c422ddc02de8a4ffae2581003be42f"
+  integrity sha512-yFH+ZMdokCbefYvHoAlhHLFxl61xQ+Vwlna+1fqzt7JwB3jfugq1sRlceUlTvhMYnTkJZnMOas3hHx3IZ8USLQ==
+
 "@next/env@14.2.5":
   version "14.2.5"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.2.5.tgz#1d9328ab828711d3517d0a1d505acb55e5ef7ad0"

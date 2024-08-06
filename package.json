@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fdorantesm/react-skill-icons": "^1.0.5",
     "@types/js-cookie": "^3.0.6",
     "framer-motion": "^11.3.19",
     "js-cookie": "^3.0.5",
