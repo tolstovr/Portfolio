@@ -20,7 +20,7 @@ const SocialsBoxes = () => {
             {curLang().hero.tgchannel}
           </Button>
         </a>
-        <a href="/avatar.webp" download>
+        <a href="/resume.pdf" download>
           <Button fullwidth size="large" icon={<MdPictureAsPdf />}>
             {curLang().hero.cv}
           </Button>
