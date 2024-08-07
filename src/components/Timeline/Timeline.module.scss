@@ -1,0 +1,59 @@
+@use "@/utils/colors.scss" as *;
+
+.timeline {
+    position: relative;
+    padding: 0 2rem;
+    list-style: none;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 1rem;
+    }
+    
+    & .timeline-item {
+        position: relative;
+        margin: 20px 0;
+        padding-left: 30px;
+
+        &:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 10px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: $color-white;
+        }
+
+        &.light:not(:last-child)::before {
+            background: $color-black;
+        }
+    
+        & .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $color-white;
+
+            &.light {
+                background: $color-black;
+            }
+        }
+    
+        & .timeline-content {
+            color: $color-white;
+            border-radius: 5px;
+            padding: 10px;
+
+            &.light {
+                color: $color-black;
+            }
+    
+            h4 {
+                margin: 0 0 5px;
+            }
+        }
+    }
+}
