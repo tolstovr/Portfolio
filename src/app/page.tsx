@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { ThemeProvider, useTheme } from "@/hooks/ThemeContext"
 import { LocaleProvider } from "@/hooks/LocaleContext"
 import HeroSection from "@/modules/HeroSection/HeroSection"
+import SkillsSection from "@/modules/SkillsSection/SkillsSection"
 import styles from "./page.module.scss"
 
 const BodyStyleUpdater = () => {
@@ -30,6 +31,7 @@ const Home = () => {
         <BodyStyleUpdater />
         <main>
           <HeroSection />
+          <SkillsSection />
         </main>
       </ThemeProvider>
     </LocaleProvider>
