@@ -26,11 +26,11 @@ interface GridProps {
   children?: React.ReactNode
 }
 
-const Grid = ({ gap, rows, columns, areas, className, children }: GridProps) => {
+const Grid = ({ gap = "2rem", rows, columns, areas, className, children }: GridProps) => {
   const gridProps = {
     className: `${styles.grid} ${className}`,
     style: {
-      gap: gap ?? "1.5rem",
+      gap: gap,
       "--rows-1440": `repeat(${rows[1440]}, 1fr)`,
       "--rows-1024": `repeat(${rows[1024]}, 1fr)`,
       "--rows-768": `repeat(${rows[768]}, 1fr)`,
