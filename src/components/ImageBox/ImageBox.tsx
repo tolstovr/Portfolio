@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect } from "react"
+import { useTheme } from "@/hooks/ThemeContext"
 import { motion, useAnimation, backOut } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import styles from "./ImageBox.module.scss"
@@ -44,6 +45,7 @@ const variants = {
 const Box = ({ src, alt = "", gridArea, animation, delay = 0, className, children }: BoxProps) => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
+  const { theme } = useTheme()
 
   useEffect(() => {
     if (inView) {

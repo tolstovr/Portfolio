@@ -2,10 +2,8 @@
 
 .image-box {
     border-radius: 1.5rem;
-    background-color: color-mix(in srgb, $color-grey-900 50%, $color-black 50%);
-    transition: background .25s, color .25s;
     overflow: hidden;
-    
+    position: relative;
 
     & img {
         position: absolute;
@@ -16,11 +14,5 @@
         object-fit: cover;
         transform: translate(-50%, -50%);
         border-radius: 1.5rem;
-    }
-
-    &.light {
-        background-color: $color-grey-50;
-        color: $color-black;
-        box-shadow: 0 0 .25rem $color-grey-400;
     }
 }
