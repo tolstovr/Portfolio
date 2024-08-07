@@ -1,16 +1,12 @@
 "use client"
 import React, { useEffect } from "react"
-import { useTheme } from "@/hooks/ThemeContext"
 import { motion, useAnimation, backOut } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import styles from "./ImageBox.module.scss"
-import Image from "next/image"
 
 interface BoxProps {
   src: string
   alt?: string
-  width?: number
-  height?: number
   gridArea: string
   animation?: "fade-up" | "fade-left" | "fade-right" | "fade-down" | "scale-in" | "scale-out"
   delay?: number
@@ -45,10 +41,9 @@ const variants = {
   }
 }
 
-const Box = ({ src, alt = "", width, height, gridArea, animation, delay = 0, className, children }: BoxProps) => {
+const Box = ({ src, alt = "", gridArea, animation, delay = 0, className, children }: BoxProps) => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
-  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     if (inView) {
@@ -74,8 +69,10 @@ const Box = ({ src, alt = "", width, height, gridArea, animation, delay = 0, cla
   return (
     animation ? <motion.div {...imageBoxProps}>
       <img src={src} alt={alt} />
+      {children}
     </motion.div> : <div {...imageBoxProps}>
       <img src={src} alt={alt} />
+      {children}
     </div>
   )
 }
