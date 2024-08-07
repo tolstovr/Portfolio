@@ -2,13 +2,12 @@
 import React, { useEffect } from "react"
 import { motion, useAnimation, backOut } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import styles from "./Box.module.scss"
 
 interface AnimatedProps {
   animation: "fade-up" | "fade-left" | "fade-right" | "fade-down" | "scale-in" | "scale-out"
   delay?: number
   className?: string
-  styles?: React.CSSProperties
+  style?: React.CSSProperties
   children?: React.ReactNode
 }
 
@@ -39,7 +38,7 @@ const variants = {
   }
 }
 
-const Box = ({ animation, delay = 0, className, children }: AnimatedProps) => {
+const Animated = ({ animation, delay = 0, className, style, children }: AnimatedProps) => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
 
@@ -51,7 +50,7 @@ const Box = ({ animation, delay = 0, className, children }: AnimatedProps) => {
 
   const animatedProps = {
     className: `${className ?? ""}`,
-    style: styles,
+    style: style,
     ...(animation && {
       ref: ref,
       initial: "hidden",
@@ -66,4 +65,4 @@ const Box = ({ animation, delay = 0, className, children }: AnimatedProps) => {
   )
 }
 
-export default Box
+export default Animated
