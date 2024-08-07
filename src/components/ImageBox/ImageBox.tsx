@@ -56,7 +56,7 @@ const Box = ({ src, alt = "", width, height, gridArea, animation, delay = 0, cla
     }
   }, [controls, inView])
 
-  const divProps = {
+  const imageBoxProps = {
     className: `${styles["image-box"]} ${className ?? ""}`,
     style: {
       gridArea: gridArea,
@@ -72,9 +72,9 @@ const Box = ({ src, alt = "", width, height, gridArea, animation, delay = 0, cla
   }
 
   return (
-    animation ? <motion.div {...divProps}>
+    animation ? <motion.div {...imageBoxProps}>
       <img src={src} alt={alt} />
-    </motion.div> : <div {...divProps}>
+    </motion.div> : <div {...imageBoxProps}>
       <img src={src} alt={alt} />
     </div>
   )

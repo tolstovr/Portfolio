@@ -15,10 +15,19 @@ interface ButtonProps {
 }
 
 const Button = ({ children, ...props }: ButtonProps) => {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
+
+  const buttonProps = {
+    className: `${styles.button} ${props.variant ? styles[props.variant] : styles.fill}
+                ${props.size ? styles[props.size] : styles.medium} ${props.fullwidth && styles.fullwidth }
+                ${props.round && styles.round} ${props.color ? styles[props.color] : styles.default}
+                ${theme === "light" && styles.light}`,
+    disabled: props.disabled,
+    onClick: props.onClick
+  }
 
   return (
-    <button className={`${styles.button} ${props.variant ? styles[props.variant] : styles.fill} ${props.size ? styles[props.size] : styles.medium} ${props.fullwidth && styles.fullwidth } ${props.round && styles.round} ${props.color ? styles[props.color] : styles.default} ${theme === "light" && styles.light}`} disabled={props.disabled} onClick={props.onClick}>
+    <button {...buttonProps}>
       {props.icon && <span className={styles.icon}>{props.icon}</span>}
       {children}
     </button>

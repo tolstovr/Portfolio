@@ -53,7 +53,7 @@ const Box = ({ backgroundURL, backgroundColor, gridArea, animation, delay = 0, c
     }
   }, [controls, inView])
 
-  const divProps = {
+  const boxProps = {
     className: `${styles.box} ${className ?? ""} ${backgroundURL && styles["bg-img"]} ${theme === "light" && styles.light}`,
     style: {
       ...(backgroundURL && {backgroundImage: `url(${backgroundURL})`}),
@@ -70,7 +70,7 @@ const Box = ({ backgroundURL, backgroundColor, gridArea, animation, delay = 0, c
   }
 
   return (
-    animation ? <motion.div {...divProps}>{children}</motion.div> : <div {...divProps}>{children}</div>
+    animation ? <motion.div {...boxProps}>{children}</motion.div> : <div {...boxProps}>{children}</div>
   )
 }
 
