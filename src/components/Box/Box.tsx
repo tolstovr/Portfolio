@@ -45,7 +45,7 @@ const variants = {
 const Box = ({ backgroundURL, backgroundColor, gridArea, animation, delay = 0, className, children }: BoxProps) => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
 
   useEffect(() => {
     if (inView) {
