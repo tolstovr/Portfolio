@@ -1,5 +1,4 @@
 import React from "react"
-import { useTheme } from "@/hooks/ThemeContext"
 import { getRows, getColumns } from "@/utils/getRowsColumns"
 import Grid from "@/components/Grid/Grid"
 import InfoBoxes from "./InfoBoxes"
@@ -7,8 +6,6 @@ import SocialsBoxes from "./SocialsBoxes"
 import SettingsBox from "./SettingsBox"
 
 const HeroSection = () => {
-  const { theme, toggleTheme } = useTheme()
-
   const areas1440 = [
     "avatar avatar avatar avatar cv-tg cv-tg cv-tg cv-tg cv-tg settings settings settings settings",
     "avatar avatar avatar avatar info info info info info info socials socials socials",
@@ -27,6 +24,7 @@ const HeroSection = () => {
   const areas768 = [
     "settings",
     "settings",
+    "avatar",
     "avatar",
     "avatar",
     "avatar",
