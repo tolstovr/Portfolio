@@ -1,11 +1,11 @@
-# Box
+# ImageBox
 
 ## Supported attributes
 
 | **Attribute** | **Options** | **Default** |
 |---|---|---|
-| `backgroundURL` | `string \| undefined` | `undefined` |
-| `backgroundColor` | `string \| undefined` | `undefined` |
+| `src` | `string` | required |
+| `alt` | `string \| undefined` | `""` |
 | `gridArea` | `string` | required |
 | `animation` | `"fade-up" \| "fade-left" \| "fade-right" \| "fade-down" \| "scale-in" \| "scale-out" \| undefined` | `undefined` |
 | `delay` | `number \| undefined` | `undefined` |
@@ -16,6 +16,7 @@
 
 ```tsx
 import Grid from "@/components/Grid/Grid"
+import ImageBox from "@/components/ImageBox/ImageBox"
 import Box from "@/components/Box/Box"
 import styles from "./Container.module.scss"
 
@@ -37,7 +38,7 @@ const Container = () => {
       <Box gridArea="area1" backgroundColor="indigo">
         Aboba
       </Box>
-      <Box gridArea="area2" backgroundURL="/avatar.webp" />
+      <ImageBox gridArea="area2" src="/avatar.webp" alt="Avatar" />
       <Box gridArea="area3" className={styles.box} />
       <Box gridArea="area4" animation="fade-up" delay={0.25} />
     </Grid>
