@@ -2,6 +2,7 @@
 import React, { useEffect } from "react"
 import { ThemeProvider, useTheme } from "@/hooks/ThemeContext"
 import { LocaleProvider } from "@/hooks/LocaleContext"
+import CookieModal from "@/modules/CookieModal/CookieModal"
 import HeroSection from "@/modules/HeroSection/HeroSection"
 import SkillsSection from "@/modules/SkillsSection/SkillsSection"
 import styles from "./page.module.scss"
@@ -29,6 +30,7 @@ const Home = () => {
     <LocaleProvider>
       <ThemeProvider>
         <BodyStyleUpdater />
+        <CookieModal />
         <main>
           <HeroSection />
           <SkillsSection />

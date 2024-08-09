@@ -1,6 +1,8 @@
-import Cookies from "js-cookie"
-
 export const ru = {
+  cookies: {
+    message: `Для корректной работы тем и языков сайт использует <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Cookies" target="_blank" class="a" rel="nofollow noreferrer">Cookies</a>. Просто держу в курсе`,
+    accept: "Хорошо"
+  },
   hero: {
     title: "Привет, я Роберт!",
     info: "Я frontend разработчик и UI/UX инженер. Занимаюсь разработкой веб-приложений, преподавательской деятельностью, а ещё люблю играть в шахматы. А это мой сайт портфолио. Добро пожаловать!",
@@ -24,6 +26,10 @@ export const ru = {
 }
 
 export const en = {
+  cookies: {
+    message: `For a correct working of themes and languages, site uses <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank" class="a" rel="nofollow noreferrer">Cookies</a>. Just keepin' you posted`,
+    accept: "I agree"
+  },
   hero: {
     title: "Hi, I'm Robert!",
     info: "I'm frontend developer and UI/UX engineer. I develop modern web applications, teach students and play some chess. And BTW, this is my portfolio website. Welcome!",
