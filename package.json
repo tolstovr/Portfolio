@@ -11,6 +11,7 @@
   "dependencies": {
     "@fdorantesm/react-skill-icons": "^1.0.5",
     "@types/js-cookie": "^3.0.6",
+    "@types/react-html-parser": "^2.0.6",
     "framer-motion": "^11.3.19",
     "js-cookie": "^3.0.5",
     "next": "14.2.5",
