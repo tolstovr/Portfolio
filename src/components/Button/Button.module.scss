@@ -95,6 +95,8 @@
     }
 
     &.fill {
+        outline: none !important;
+
         &.default {
             background-color: $color-grey-900;
             color: $color-white;
