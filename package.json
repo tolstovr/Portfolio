@@ -17,6 +17,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
+    "react-html-parser": "^2.0.2",
     "react-icons": "^5.2.1",
     "react-intersection-observer": "^9.13.0"
   },
