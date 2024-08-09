@@ -4,7 +4,7 @@ import { motion, useAnimation, backOut } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
 interface AnimatedProps {
-  animation: "fade-up" | "fade-left" | "fade-right" | "fade-down" | "scale-in" | "scale-out"
+  animation: "fade-in" | "fade-up" | "fade-left" | "fade-right" | "fade-down" | "scale-in" | "scale-out"
   delay?: number
   className?: string
   style?: React.CSSProperties
@@ -12,6 +12,10 @@ interface AnimatedProps {
 }
 
 const variants = {
+  "fade-in": {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  },
   "fade-up": {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 }
@@ -43,9 +47,8 @@ const Animated = ({ animation, delay = 0, className, style, children }: Animated
   const [ref, inView] = useInView()
 
   useEffect(() => {
-    if (inView) {
+    if (inView)
       controls.start("visible")
-    }
   }, [controls, inView])
 
   const animatedProps = {
