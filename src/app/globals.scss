@@ -19,7 +19,16 @@ body {
 
 a, a:visited, a:hover, a:active {
     color: inherit;
-    text-decoration: none;
+   text-decoration: none;
+
+    &.a {
+        color: $color-blue-500;
+        transition: color 0.125s ease-in-out;
+
+        &:hover {
+            color: $color-blue-700;
+        }
+    }
 }
 
 main {
