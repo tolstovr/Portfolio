@@ -1,0 +1,40 @@
+@use "@/utils/colors.scss" as *;
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  position: absolute;
+  width: min(100% - 2rem, 568px);
+  bottom: 1rem; // In my particular case there's no need to stack notifications, but it's actually easy to implement (Checkout issue in repo)
+  right: 1rem;
+  z-index: 5;
+  pointer-events: auto;
+
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: color-mix(in srgb, $color-grey-900 50%, $color-black 50%);
+  transition: background .25s, color .25s;
+  outline: 1px solid $color-grey-700;
+
+  & > *:first-child {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    & > *, & > *:first-child {
+      width: 100%;
+    }
+  }
+
+  &.light {
+    background-color: $color-grey-50;
+    color: $color-black;
+    box-shadow: 0 0 .25rem $color-grey-400;
+    outline-color: transparent;
+  }
+}
